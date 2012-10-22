@@ -9,7 +9,7 @@ node-premailer simplifies api integration by calling the Premailer API to inline
 ## Install
 
 <pre>
-  npm install premailer
+  npm install premailer-api
 </pre>
 
 Or from source:
@@ -23,7 +23,7 @@ Or from source:
 ## Usage
 
 ```javascript
-var premailer = require('premailer');
+var premailer = require('premailer-api');
 
 var emailTemplate = '
   <html>
