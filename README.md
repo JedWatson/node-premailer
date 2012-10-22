@@ -48,7 +48,7 @@ premailer.parse({html: emailTemplate }, function(err, email) {
 ## Options
 
 - premailerAPI (string)
-  The URL of the premailer API. If you're running your own, replace this.
+  The URL of the premailer API. If you're running your own, replace this. Defaults to http://premailer.dialect.ca/api/0.1/documents
 - html (string)
   The html of the email to parse and inline styles.
 - url (string)
@@ -57,12 +57,12 @@ premailer.parse({html: emailTemplate }, function(err, email) {
   Whether to fetch the parsed HTML (you'll usually want this). Defaults to true.
 - fetchText (boolean)
   Whether to fetch the auto-generated text version (disable this if you are providing your own). Defaults to true.
-- see http://premailer.dialect.ca/api for full list of options, including:
+- See http://premailer.dialect.ca/api for full list of options. All options have aliases for node.js style variable names.
   - adapter
-  - base_url
-  - line_length
-  - link_query_string
-  - preserve_styles
-  - remove_ids
-  - remove_classes
-  - remove_comments
+  - baseUrl || base_url
+  - lineLength || line_length
+  - linkQueryString || link_query_string
+  - preserveStyles || preserve_styles
+  - removeIds || remove_ids
+  - removeClasses || remove_classes
+  - removeComments || remove_comments

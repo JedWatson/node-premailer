@@ -1,4 +1,5 @@
-var request = require('request');
+var _ = require('underscore'),
+	request = require('request');
 
 /**
 	premailer.prepare()
@@ -29,13 +30,13 @@ var request = require('request');
 
 			see http://premailer.dialect.ca/api for full list of options, including:
 				adapter
-				base_url
-				line_length
-				link_query_string
-				preserve_styles
-				remove_ids
-				remove_classes
-				remove_comments
+				baseUrl || base_url
+				lineLength || line_length
+				linkQueryString || link_query_string
+				preserveStyles || preserve_styles
+				removeIds || remove_ids
+				removeClasses || remove_classes
+				removeComments || remove_comments
 
 
 		next function(err, email)
@@ -49,19 +50,45 @@ var request = require('request');
 */
 exports.prepare = function(_options, next) {
 
-	if (typeof _options != 'object') {
-		_options = {};
-	}
-
-	var options = {
+	var options = _.defaults({
 		premailerAPI: "http://premailer.dialect.ca/api/0.1/documents",
 		fetchHTML: true,
 		fetchText: true
-	};
+	}, _options);
 
-	for (key in _options) {
-		options[key] = _options[key];
-	}
+	if (_.has(options, 'baseUrl'))
+		options.base_url = options.baseUrl;
+
+	if (_.has(options, 'lineLength'))
+		options.line_length = options.lineLength;
+
+	if (_.has(options, 'linkQueryString'))
+		options.link_query_string = options.linkQueryString;
+
+	if (_.has(options, 'preserveStyles'))
+		options.preserve_styles = options.preserveStyles;
+
+	if (_.has(options, 'removeIds'))
+		options.remove_ids = options.removeIds;
+
+	if (_.has(options, 'removeClasses'))
+		options.remove_classes = options.removeClasses;
+
+	if (_.has(options, 'removeComments'))
+		options.remove_comments = options.removeComments;
+
+	var send = _.pick(options, [
+		'html',
+		'url',
+		'adapter',
+		'base_url',
+		'line_length',
+		'link_query_string',
+		'preserve_styles',
+		'remove_ids',
+		'remove_classes',
+		'remove_comments'
+	]);
 
 	var rtn = {};
 	var apiResponse = null;
@@ -107,9 +134,5 @@ exports.prepare = function(_options, next) {
 		});
 	};
 
-	request.post(options.premailerAPI, {
-		form: {
-			html: options.html
-		}
-	}, handlePremailerResponse);
+	request.post(options.premailerAPI, { form: send }, handlePremailerResponse);
 }
