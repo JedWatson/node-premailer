@@ -68,13 +68,13 @@ premailer.parse({html: emailTemplate }, function(err, email) {
   - removeComments || remove_comments
 
 
-  ## License and Credits
+## License and Credits
 
-  MIT Licensed. Copyright Jed Watson 2012.
+MIT Licensed. Copyright Jed Watson 2012.
 
-  A big thankyou to [Dialect](http://dialect.ca) for Premailer, and for making the API freely available.
+A big thankyou to [Dialect](http://dialect.ca) for Premailer, and for making the API freely available.
 
-  There's also a web version available here: http://premailer.dialect.ca
+There's also a web version available here: http://premailer.dialect.ca
 
-  And you can check out the source code for Premailer itself here: https://github.com/alexdunae/premailer/
-  
+And you can check out the source code for Premailer itself here: https://github.com/alexdunae/premailer/
+
