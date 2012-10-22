@@ -66,3 +66,15 @@ premailer.parse({html: emailTemplate }, function(err, email) {
   - removeIds || remove_ids
   - removeClasses || remove_classes
   - removeComments || remove_comments
+
+
+  ## License and Credits
+
+  MIT Licensed. Copyright Jed Watson 2012.
+
+  A big thankyou to [Dialect](http://dialect.ca) for Premailer, and for making the API freely available.
+
+  There's also a web version available here: http://premailer.dialect.ca
+
+  And you can check out the source code for Premailer itself here: https://github.com/alexdunae/premailer/
+  
