@@ -40,7 +40,7 @@ var emailTemplate = '
     </body>
   <html>';
 
-premailer.parse({html: emailTemplate }, function(err, email) {
+premailer.prepare({html: emailTemplate }, function(err, email) {
   res.send(email.html);
 });
 ```
