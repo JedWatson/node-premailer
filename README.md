@@ -3,7 +3,7 @@ node-premailer
 
 A simple api wrapper for http://premailer.dialect.ca, a great tool for inlining css before you send an email.
 
-node-premailer simplifies api integration by calling the Premailer API to inline css styles (and opther options such as removing comments, classes and ids), then retrieving the generated html and text from their respective URLs before passing them to your callback.
+node-premailer simplifies api integration by calling the Premailer API to inline css styles (and other options such as removing comments, classes and ids), then retrieving the generated html and text from their respective URLs before passing them to your callback.
 
 
 ## Install
