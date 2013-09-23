@@ -1,11 +1,10 @@
 {
   "name": "premailer-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node wrapper for the Premailer API (premailer.dialect.ca/api)",
   "homepage": "https://github.com/JedWatson/node-premailer",
   "author": {
-    "name": "Jed Watson",
-    "email": "jed.watson@gmail.com"
+    "name": "Jed Watson"
   },
   "keywords": [
     "premailer",
@@ -28,7 +27,7 @@
     "url": "https://github.com/JedWatson/node-premailer.git"
   },
   "bugs": {
-    "url": "https://github.com/timrwood/moment/issues"
+    "url": "https://github.com/JedWatson/node-premailer/issues"
   },
   "license": "MIT"
 }
