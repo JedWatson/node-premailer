@@ -58,14 +58,14 @@ premailer.prepare({html: emailTemplate }, function(err, email) {
 - fetchText (boolean)
   Whether to fetch the auto-generated text version (disable this if you are providing your own). Defaults to true.
 - See http://premailer.dialect.ca/api for full list of options. All options have aliases for node.js style variable names.
-  - adapter
-  - baseUrl || base_url
-  - lineLength || line_length
-  - linkQueryString || link_query_string
-  - preserveStyles || preserve_styles
-  - removeIds || remove_ids
-  - removeClasses || remove_classes
-  - removeComments || remove_comments
+  - `adapter`
+  - `baseUrl` || `base_url`
+  - `lineLength` || `line_length`
+  - `linkQueryString` || `link_query_string`
+  - `preserveStyles` || `preserve_styles`
+  - `removeIds` || `remove_ids`
+  - `removeClasses` || `remove_classes`
+  - `removeComments` || `remove_comments`
 
 
 ## License and Credits
