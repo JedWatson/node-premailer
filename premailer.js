@@ -98,7 +98,12 @@ exports.prepare = function(_options, next) {
 			next(err);
 			return;
 		}
-		apiResponse = JSON.parse(body);
+		try {
+			apiResponse = JSON.parse(body);
+		} catch(ex) {
+			next(ex);
+			return;
+		}
 		if (options.fetchHTML) {
 			getHTML();
 		} else if (options.fetchText) {
