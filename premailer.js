@@ -101,8 +101,10 @@ exports.prepare = function(_options, next) {
 		try {
 			apiResponse = JSON.parse(body);
 		} catch(ex) {
-			next(ex);
-			return;
+			if (body.match(/Application Error/gi)) {
+				return next('Premailer returned an unkown server error');
+			}
+			return next(ex);
 		}
 		if (options.fetchHTML) {
 			getHTML();
