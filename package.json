@@ -16,8 +16,8 @@
   ],
   "main": "premailer.js",
   "dependencies": {
-    "request": "~2.11.4",
-    "underscore": "~1.4.2"
+    "request": "~2.36.0",
+    "underscore": "~1.6.0"
   },
   "engines": {
     "node": ">0.8.*"
