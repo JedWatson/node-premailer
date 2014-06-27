@@ -1,6 +1,6 @@
 {
   "name": "premailer-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Node wrapper for the Premailer API (premailer.dialect.ca/api)",
   "homepage": "https://github.com/JedWatson/node-premailer",
   "author": {
