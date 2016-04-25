@@ -1,9 +1,9 @@
-var _ = require('underscore'),
-	request = require('request');
+var _ = require('underscore');
+var request = require('request');
 
 /**
 	premailer.prepare()
-	
+
 	Calls the Premailer API to inline css styles (and opther options), then retrieves
 	the generated html and text from their respective URLs.
 
@@ -48,34 +48,35 @@ var _ = require('underscore'),
 				text (string)
 					The text contents of the email
 */
-exports.prepare = function(_options, next) {
+exports.prepare = function (_options, next) {
 
 	var options = _.defaults({
 		premailerAPI: "http://premailer.dialect.ca/api/0.1/documents",
 		fetchHTML: true,
-		fetchText: true
+		fetchText: true,
 	}, _options);
 
-	if (_.has(options, 'baseUrl'))
+	if (_.has(options, 'baseUrl')) {
 		options.base_url = options.baseUrl;
-
-	if (_.has(options, 'lineLength'))
+	}
+	if (_.has(options, 'lineLength')) {
 		options.line_length = options.lineLength;
-
-	if (_.has(options, 'linkQueryString'))
+	}
+	if (_.has(options, 'linkQueryString')) {
 		options.link_query_string = options.linkQueryString;
-
-	if (_.has(options, 'preserveStyles'))
+	}
+	if (_.has(options, 'preserveStyles')) {
 		options.preserve_styles = options.preserveStyles;
-
-	if (_.has(options, 'removeIds'))
+	}
+	if (_.has(options, 'removeIds')) {
 		options.remove_ids = options.removeIds;
-
-	if (_.has(options, 'removeClasses'))
+	}
+	if (_.has(options, 'removeClasses')) {
 		options.remove_classes = options.removeClasses;
-
-	if (_.has(options, 'removeComments'))
+	}
+	if (_.has(options, 'removeComments')) {
 		options.remove_comments = options.removeComments;
+	}
 
 	var send = _.pick(options, [
 		'html',
@@ -87,7 +88,7 @@ exports.prepare = function(_options, next) {
 		'preserve_styles',
 		'remove_ids',
 		'remove_classes',
-		'remove_comments'
+		'remove_comments',
 	]);
 
 	var rtn = {};
@@ -100,7 +101,7 @@ exports.prepare = function(_options, next) {
 		}
 		try {
 			apiResponse = JSON.parse(body);
-		} catch(ex) {
+		} catch (ex) {
 			if (body.match(/Application Error/gi)) {
 				return next('Premailer returned an unkown server error');
 			}
@@ -115,8 +116,8 @@ exports.prepare = function(_options, next) {
 		}
 	};
 
-	var getHTML = function() {
-		request.get(apiResponse.documents.html, function(err, res, body) {
+	var getHTML = function () {
+		request.get(apiResponse.documents.html, function (err, res, body) {
 			if (err) {
 				next(err);
 				return;
@@ -131,7 +132,7 @@ exports.prepare = function(_options, next) {
 	}
 
 	var getText = function (err, res, body) {
-		request.get(apiResponse.documents.txt, function(err, res, body) {
+		request.get(apiResponse.documents.txt, function (err, res, body) {
 			if (err) {
 				next(err);
 				return;
