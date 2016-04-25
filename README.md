@@ -15,7 +15,7 @@ node-premailer simplifies api integration by calling the Premailer API to inline
 Or from source:
 
 <pre>
-  git clone git://github.com/JedWatson/node-premailer.git 
+  git clone git://github.com/JedWatson/node-premailer.git
   cd node-premailer
   npm link
 </pre>
@@ -34,8 +34,8 @@ var emailTemplate = '
       </style>
     </head>
     <body>
-      Styles inlined with 
-      <a href="http://premailer.dialect.ca">Premailer</a> via 
+      Styles inlined with
+      <a href="http://premailer.dialect.ca">Premailer</a> via
       <a href="https://github.com/JedWatson/node-premailer">node-premailer</a>.
     </body>
   <html>';
@@ -70,11 +70,10 @@ premailer.prepare({html: emailTemplate }, function(err, email) {
 
 ## License and Credits
 
-MIT Licensed. Copyright Jed Watson 2012.
+MIT Licensed. Copyright Jed Watson 2016.
 
-A big thankyou to [Dialect](http://dialect.ca) for Premailer, and for making the API freely available.
+A big thank you to [Dialect](http://dialect.ca) for Premailer, and for making the API freely available.
 
 There's also a web version available here: http://premailer.dialect.ca
 
 And you can check out the source code for Premailer itself here: https://github.com/alexdunae/premailer/
-
