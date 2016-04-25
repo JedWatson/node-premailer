@@ -25,7 +25,7 @@ Or from source:
 ```javascript
 var premailer = require('premailer-api');
 
-var emailTemplate = '
+var emailTemplate = `
   <html>
     <head>
       <title>My Email</title>
@@ -38,9 +38,10 @@ var emailTemplate = '
       <a href="http://premailer.dialect.ca">Premailer</a> via
       <a href="https://github.com/JedWatson/node-premailer">node-premailer</a>.
     </body>
-  <html>';
+  <html>`;
 
-premailer.prepare({html: emailTemplate }, function(err, email) {
+premailer.prepare({ html: emailTemplate }, function (err, email) {
+  if (err) throw err;
   res.send(email.html);
 });
 ```
